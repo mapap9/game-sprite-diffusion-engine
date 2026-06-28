@@ -18,7 +18,7 @@ To maintain strict compliance and avoid utilizing copyrighted game assets, the t
 1. **Synthetic Generation:** High-fidelity raw texture sheets were generated using a frontier model.
 2. **Morphological Tokenization:** A custom OpenCV preprocessing engine programmatically segmented, sliced, and isolated individual asset coordinates into uniform $28\times28$ matrices.
 3. **Symmetric Padding:** Assets were centrally anchored and padded out to uniform $32\times32$ square tensors to align with standard convolutional grid layouts.
-
+![Dataset](data/raw/sprites.jpg)
 ---
 
 ## 📊 Milestone Convergence & Visual Artifacts
