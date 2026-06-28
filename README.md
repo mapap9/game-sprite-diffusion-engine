@@ -18,13 +18,17 @@ To maintain strict compliance and avoid utilizing copyrighted game assets, the t
 
 1. **Synthetic Generation:** High-fidelity raw texture sheets were generated using a frontier model.
 2. **Morphological Tokenization:** A custom OpenCV preprocessing engine programmatically segmented, sliced, and isolated individual asset coordinates into uniform $28\times28$ matrices.
-3. **Symmetric Padding:** Assets were centrally anchored and padded out to uniform $32\times32$ square tensors to align with standard convolutional grid layouts.
+3. **Symmetric Padding:** Utilizing OpenCV, assets were centrally anchored and padded out to uniform $32\times32$ square tensors to align with standard convolutional grid layouts. You can utilize this by running: ```python process_sheets.py```
 ![Dataset](data/raw/sprites.jpg)
 ---
 
 ## 📊 Milestone Convergence & Visual Artifacts
 
 The network maps multi-channel joint optimization problems across $R, G, \text{ and } B$ spatial distributions, transitioning explicitly from low-frequency global features to high-frequency structural boundaries.
+
+ ```python train_engine.py```
+
+  When training is finished:  ```python view_samples.py```
 
 ### 🔹 Phase 1: Epoch 20 (The Macro-Manifold)
 Early training cycles cleared out-of-distribution noise, locking the background canvas to absolute black bounds (`[-1, -1, -1]` normalized). The network isolated continuous RGB bands for specific palettes (potions, metals, woods) but boundaries remained soft.
@@ -42,6 +46,9 @@ Full structural convergence. The network successfully minted a themed collection
 ## 🔬 Systems Post-Mortem: Inductive Bias & Dataset Leakage
 
 An analytical audit of the final weight matrices revealed a distinct **Spatial Aspect Ratio Bias**: the network consistently anchored its output distributions to square or blocky configurations, even when attempting to render structurally irregular items (like weapons or limbs) known to exist in 91% of the source data.
+
+ ```python audit_dataset.py```
+
 ![Dataset Audit](assets/dataset_audit.png)
 ### 🔍 Root Cause Analysis:
 In low-resolution latent spaces ($32\times32$), spatial features like thin diagonal blades exhibit severe pixel sparsity. Conversely, block-based assets (scrolls, books, chests) represent high-density, low-entropy convolutional patterns. 
