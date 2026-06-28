@@ -6,6 +6,7 @@ GSDE is a ground-up, raw PyTorch 3-channel (RGB) parametric diffusion engine opt
 The entire pipeline was engineered to bypass bloated third-party frameworks, maintaining a lean execution path that prioritizes compute efficiency and low-level matrix manipulation.
 
 * **Throughput Optimization:** Sustained execution speed of **25 iterations/second** during the optimization phase.
+![Throughput](assets/throughput.png)
 * **Compute Footprint:** Peak VRAM allocation constrained to **1.3GB** under a continuous batch size of 64, with active GPU power consumption stabilized at **220W**.
 * **Convergence Geometry:** Fully trained from scratch over **1,000 Epochs** (Total runtime: ~27 minutes), forcing the parametric global loss down to a hyper-stable **<0.02**.
 
