@@ -36,7 +36,7 @@ Early training cycles cleared out-of-distribution noise, locking the background 
 ### 🔹 Phase 2: Epoch 100 (Structural Organization)
 The misty color distributions condensed into recognizable geometric bodies. The model isolated unique item layout rules, successfully drawing rectangular scroll structures and dense item clusters.
 ![Epoch 100](assets/generated_pixel_art_unet_epoch_100.png)
-### 🔹 Phase 3: Epoch 1000 (High-Frequency Crystallization)
+### 🔹 Phase 3: Epoch 1000 (High-Frequency Generation)
 Full structural convergence. The network successfully minted a themed collection of assets including high-contrast golden parchment scrolls, distinct rounded medieval shields with internal crest variations, and highly articulate pixel-art treasure chests (complete with lid rims and lock shading).
 
 ![Epoch](assets/generated_pixel_art_unet_epoch_1000.png)
