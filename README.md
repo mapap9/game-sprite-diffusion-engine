@@ -41,7 +41,7 @@ Full structural convergence. The network successfully minted a themed collection
 ## 🔬 Systems Post-Mortem: Inductive Bias & Dataset Leakage
 
 An analytical audit of the final weight matrices revealed a distinct **Spatial Aspect Ratio Bias**: the network consistently anchored its output distributions to square or blocky configurations, even when attempting to render structurally irregular items (like weapons or limbs) known to exist in 91% of the source data.
-
+![Dataset Audit](assets/dataset_audit.png)
 ### 🔍 Root Cause Analysis:
 In low-resolution latent spaces ($32\times32$), spatial features like thin diagonal blades exhibit severe pixel sparsity. Conversely, block-based assets (scrolls, books, chests) represent high-density, low-entropy convolutional patterns. 
 
