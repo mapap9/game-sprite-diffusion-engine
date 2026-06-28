@@ -27,12 +27,14 @@ The network maps multi-channel joint optimization problems across $R, G, \text{ 
 
 ### 🔹 Phase 1: Epoch 20 (The Macro-Manifold)
 Early training cycles cleared out-of-distribution noise, locking the background canvas to absolute black bounds (`[-1, -1, -1]` normalized). The network isolated continuous RGB bands for specific palettes (potions, metals, woods) but boundaries remained soft.
-
+![Epoch 20](assets/generated_pixel_art_unet_epoch_20.png)
 ### 🔹 Phase 2: Epoch 100 (Structural Organization)
 The misty color distributions condensed into recognizable geometric bodies. The model isolated unique item layout rules, successfully drawing rectangular scroll structures and dense item clusters.
-
+![Epoch 100](assets/generated_pixel_art_unet_epoch_100.png)
 ### 🔹 Phase 3: Epoch 1000 (High-Frequency Crystallization)
 Full structural convergence. The network successfully minted a themed collection of assets including high-contrast golden parchment scrolls, distinct rounded medieval shields with internal crest variations, and highly articulate pixel-art treasure chests (complete with lid rims and lock shading).
+
+![Epoch](assets/generated_pixel_art_unet_epoch_1000.png)
 
 ---
 
