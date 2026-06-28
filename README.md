@@ -46,7 +46,11 @@ An analytical audit of the final weight matrices revealed a distinct **Spatial A
 ### 🔍 Root Cause Analysis:
 In low-resolution latent spaces ($32\times32$), spatial features like thin diagonal blades exhibit severe pixel sparsity. Conversely, block-based assets (scrolls, books, chests) represent high-density, low-entropy convolutional patterns. 
 
-Because the morphological preprocessing pipeline forced every asset onto a rigid square grid and perfectly centered them, the U-Net's sliding convolutional kernels experienced **dataset alignment leakage**. The network's objective function quickly discovered that mapping continuous RGB gradients into centralized square footprints yielded the most rapid, mathematically stable reduction in Mean Squared Error (MSE). The system achieved excellent semantic variety (chests vs. shields vs. scrolls), but locked its global spatial parameters to this low-entropy geometric container.
+![Sprite](assets/sprite_00921.png)
+
+Because the morphological preprocessing pipeline forced every asset onto a rigid square grid and perfectly centered them, the U-Net's sliding convolutional kernels experienced **dataset alignment leakage**. The network's objective function quickly discovered that mapping continuous RGB gradients into centralized square footprints yielded the most rapid, mathematically stable reduction in Mean Squared Error (MSE). 
+
+Thus, the system achieved excellent semantic variety (chests vs. shields vs. scrolls), but locked its global spatial parameters to this low-entropy geometric container.
 
 ### 🛠️ Production Scaling Strategies for Next-Gen Iterations:
 1. **Class-Conditioned Embeddings (CFG):** Integrating explicit text/label tokens ($y$) into the residual blocks to allow cross-attention mechanisms to override the geometric gravity of the square blocks.
